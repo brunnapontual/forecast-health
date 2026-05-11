@@ -1,0 +1,28 @@
+# dependencies
+
+node_modules
+.venv
+venv
+
+# next
+.next
+out
+dist
+build
+
+# python
+
+**pycache**
+*.pyc
+
+# env
+
+.env
+
+# database
+
+*.db
+
+# macOS
+
+.DS_Store
