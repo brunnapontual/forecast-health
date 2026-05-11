@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="Health PI")
+app = FastAPI(title="Forecast Health PI")
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,7 +13,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"status": "ok", "message": "Health PI API"}
+    return {"status": "ok", "message": "Forecast Health PI API"}
 
 
 @app.get("/health")
