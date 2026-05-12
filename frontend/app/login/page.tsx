@@ -12,13 +12,17 @@ export default function LoginPage() {
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: { preventDefault(): void }) {
     e.preventDefault()
     setError("")
     setLoading(true)
 
     try {
-      await api.login({ email, password })
+      const result = await api.login({ email, password }) as {
+        success: boolean
+        user: { id: number; name: string; email: string }
+      }
+      localStorage.setItem("hp_user", JSON.stringify(result.user))
       router.push("/")
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "Erro ao fazer login.")
@@ -30,9 +34,14 @@ export default function LoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-gray-50">
       <div className="w-full max-w-sm">
-        <div className="mb-8 text-center">
-          <h1 className="text-xl font-semibold text-gray-900">Health PI</h1>
-          <p className="mt-1 text-sm text-gray-500">Entre na sua conta</p>
+        <div className="mb-8 flex flex-col items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gray-900">
+            <span className="text-xs font-bold text-white">FH</span>
+          </div>
+          <div className="text-center">
+            <h1 className="text-xl font-semibold text-gray-900">Forecast Health</h1>
+            <p className="mt-1 text-sm text-gray-500">Entre na sua conta</p>
+          </div>
         </div>
 
         <form
