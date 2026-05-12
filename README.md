@@ -22,4 +22,4 @@ npm install
 npm run dev
 ```
 
-Home em: http://localhost:3000
+Dashboard em: http://localhost:3000
