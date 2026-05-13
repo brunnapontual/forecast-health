@@ -1,4 +1,4 @@
-# Hospital Forecast
+# Forecast Health
 
 Sistema de previsão de ocupação de leitos hospitalares com IA (Prophet).
 
