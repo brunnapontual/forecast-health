@@ -50,15 +50,15 @@ Dashboard: `http://localhost:3000`
 forecast-health/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py          # Entry point FastAPI
-│   │   ├── database.py      # Configuração SQLite
-│   │   ├── models/          # Modelos SQLAlchemy
-│   │   ├── schemas/         # Schemas Pydantic
-│   │   └── routes/          # Endpoints da API
+│   │   ├── main.py          
+│   │   ├── database.py      
+│   │   ├── models/          
+│   │   ├── schemas/         
+│   │   └── routes/                            
 │   └── requirements.txt
 │
 └── frontend/
-    ├── app/                 # Páginas
-    ├── components/          # Componentes
-    └── services/            # Comunicação com backend
+    ├── app/                               
+    ├── components/          
+    └── services/                    
 ```
